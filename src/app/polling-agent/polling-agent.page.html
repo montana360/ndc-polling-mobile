@@ -1,0 +1,306 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Polling-Agents</ion-title>
+    <ion-icon (click)= "presentAlertConfirm()" slot="end" name="log-out-outline" style="zoom:2.0;"></ion-icon>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment mode="ios" value="presidential" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="presidential">
+        <ion-label>Presidential</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="parliamentary">
+        <ion-label>Parliamentary</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="back" *ngIf="selectedSegment == 'presidential'">
+    <form [formGroup]="presidentialForm">
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">1. NPP </ion-label>
+          <ion-input type="number" class="form-control" formControlName="npp"></ion-input>
+          <p style="color: red" *ngIf="
+            presidentialForm.get('npp').touched &&
+           presidentialForm.get('npp').hasError('required')
+                ">
+            Required Field </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">2. NDC </ion-label>
+          <ion-input type="number" class="form-control" formControlName="ndc"></ion-input>
+          <p style="color: red" *ngIf="
+                                              presidentialForm.get('ndc').touched &&
+                                              presidentialForm.get('ndc').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">3. GUM </ion-label>
+          <ion-input type="number" class="form-control" formControlName="gum"></ion-input>
+          <p style="color: red" *ngIf="
+                                              presidentialForm.get('gum').touched &&
+                                              presidentialForm.get('gum').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">4. CPP </ion-label>
+          <ion-input type="number" class="form-control" formControlName="cpp"></ion-input>
+          <p style="color: red" *ngIf="
+                                              presidentialForm.get('cpp').touched &&
+                                              presidentialForm.get('cpp').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">5. GFP </ion-label>
+          <ion-input type="number" class="form-control" formControlName="gfp"></ion-input>
+          <p style="color: red" *ngIf="
+                                              presidentialForm.get('gfp').touched &&
+                                              presidentialForm.get('gfp').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">6. GCPP </ion-label>
+          <ion-input type="text" class="form-control" formControlName="gcpp"></ion-input>
+          <p style="color: red" *ngIf="
+                                              presidentialForm.get('gcpp').touched &&
+                                              presidentialForm.get('gcpp').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">7. APC </ion-label>
+          <ion-input type="number" class="form-control" formControlName="apc"></ion-input>
+          <p style="color: red" *ngIf="
+                                              presidentialForm.get('apc').touched &&
+                                              presidentialForm.get('apc').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">8. LPG </ion-label>
+          <ion-input type="number" class="form-control" formControlName="lpg"></ion-input>
+          <p style="color: red" *ngIf="
+                                              presidentialForm.get('lpg').touched &&
+                                              presidentialForm.get('lpg').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">9. PNC </ion-label>
+          <ion-input type="number" class="form-control" formControlName="pnc"></ion-input>
+          <p style="color: red" *ngIf="
+                                              presidentialForm.get('pnc').touched &&
+                                              presidentialForm.get('pnc').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">10. PPP </ion-label>
+          <ion-input type="number" class="form-control" formControlName="ppp"></ion-input>
+          <p style="color: red" *ngIf="
+                                              presidentialForm.get('ppp').touched &&
+                                              presidentialForm.get('ppp').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">11. NDP </ion-label>
+          <ion-input type="number" class="form-control" formControlName="ndp"></ion-input>
+          <p style="color: red" *ngIf="
+                                              presidentialForm.get('ndp').touched &&
+                                              presidentialForm.get('ndp').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">12. IND </ion-label>
+          <ion-input type="number" class="form-control" formControlName="independent"></ion-input>
+          <p style="color: red" *ngIf="
+                                              presidentialForm.get('independent').touched &&
+                                              presidentialForm.get('independent').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Spoilt ballot</ion-label>
+          <ion-input type="number" class="form-control" formControlName="spoilt_ballot"></ion-input>
+          <p style="color: red" *ngIf="
+                                              presidentialForm.get('spoilt_ballot').touched &&
+                                              presidentialForm.get('spoilt_ballot').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+      </ion-list>
+      <div class="ion-margin-top">
+        <ion-button expand="block" (click)="enterPresidentialVotes(); presidentialForm.reset()" class="but">SUBMIT
+          <!-- <span *ngIf="this.isLoading" class="spinner-border spinner-border-sm" role="status"></span>
+            <span *ngIf="this.isLoading" class="load-text"> Loading...</span>
+            <span *ngIf="!this.isLoading" class="btn-text">Signin</span> -->
+        </ion-button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="selectedSegment == 'parliamentary'">
+    <form [formGroup]="parliamentaryForm">
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">1. NPP </ion-label>
+          <ion-input type="number" class="form-control" formControlName="npp"></ion-input>
+          <p style="color: red" *ngIf="
+          parliamentaryForm.get('npp').touched &&
+            parliamentaryForm.get('npp').hasError('required')
+                ">
+            Required Field </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">2. NDC </ion-label>
+          <ion-input type="number" class="form-control" formControlName="ndc"></ion-input>
+          <p style="color: red" *ngIf="
+          parliamentaryForm.get('ndc').touched &&
+                                              parliamentaryForm.get('ndc').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">3. GUM </ion-label>
+          <ion-input type="number" class="form-control" formControlName="gum"></ion-input>
+          <p style="color: red" *ngIf="
+          parliamentaryForm.get('gum').touched &&
+                                              parliamentaryForm.get('gum').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">4. CPP </ion-label>
+          <ion-input type="number" class="form-control" formControlName="cpp"></ion-input>
+          <p style="color: red" *ngIf="
+          parliamentaryForm.get('cpp').touched &&
+                                              parliamentaryForm.get('cpp').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">5. GFP </ion-label>
+          <ion-input type="number" class="form-control" formControlName="gfp"></ion-input>
+          <p style="color: red" *ngIf="
+          parliamentaryForm.get('gfp').touched &&
+                                              parliamentaryForm.get('gfp').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">6. GCPP </ion-label>
+          <ion-input type="number" class="form-control" formControlName="gcpp"></ion-input>
+          <p style="color: red" *ngIf="
+          parliamentaryForm.get('gcpp').touched &&
+                                              parliamentaryForm.get('gcpp').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">7. APC </ion-label>
+          <ion-input type="number" class="form-control" formControlName="apc"></ion-input>
+          <p style="color: red" *ngIf="
+          parliamentaryForm.get('apc').touched &&
+                                              parliamentaryForm.get('apc').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">8. LPG </ion-label>
+          <ion-input type="number" class="form-control" formControlName="lpg"></ion-input>
+          <p style="color: red" *ngIf="
+          parliamentaryForm.get('lpg').touched &&
+          parliamentaryForm.get('lpg').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">9. PNC </ion-label>
+          <ion-input type="number" class="form-control" formControlName="pnc"></ion-input>
+          <p style="color: red" *ngIf="
+          parliamentaryForm.get('pnc').touched &&
+          parliamentaryForm.get('pnc').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">10. PPP </ion-label>
+          <ion-input type="number" class="form-control" formControlName="ppp"></ion-input>
+          <p style="color: red" *ngIf="
+          parliamentaryForm.get('ppp').touched &&
+          parliamentaryForm.get('ppp').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">11. NDP </ion-label>
+          <ion-input type="number" class="form-control" formControlName="ndp"></ion-input>
+          <p style="color: red" *ngIf="
+          parliamentaryForm.get('ndp').touched &&
+                                              parliamentaryForm.get('ndp').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">12. IND </ion-label>
+          <ion-input type="number" class="form-control" formControlName="independent"></ion-input>
+          <p style="color: red" *ngIf="
+          parliamentaryForm.get('independent').touched &&
+          parliamentaryForm.get('independent').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Spoilt ballot</ion-label>
+          <ion-input type="number" class="form-control" formControlName="spoilt_ballot"></ion-input>
+          <p style="color: red" *ngIf="
+          parliamentaryForm.get('spoilt_ballot').touched &&
+          parliamentaryForm.get('spoilt_ballot').hasError('required')
+                                            ">
+            Required Field
+          </p>
+        </ion-item>
+      </ion-list>
+      <div class="ion-margin-top">
+        <ion-button expand="block" (click)="enterParliamentaryVotes(); parliamentaryForm.reset()" class="but">SUBMIT
+          <!-- <span *ngIf="this.isLoading" class="spinner-border spinner-border-sm" role="status"></span>
+            <span *ngIf="this.isLoading" class="load-text"> Loading...</span>
+            <span *ngIf="!this.isLoading" class="btn-text">Signin</span> -->
+        </ion-button>
+      </div>
+    </form>
+  </div>
+
+</ion-content>

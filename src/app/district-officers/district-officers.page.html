@@ -1,0 +1,467 @@
+<ion-header mode="ios" transluscent = "true">
+  <ion-toolbar mode="ios">
+    <ion-title>District Office</ion-title>
+    <ion-icon (click)= "presentAlertConfirm()" slot="end" name="log-out-outline" style="zoom:2.0;"></ion-icon>
+  </ion-toolbar>
+  <ion-toolbar mode="ios">
+    <ion-segment mode="ios" value="president" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="president">
+        <ion-label>President</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="parliamentary">
+        <ion-label>Palimentary</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen="true">
+  <div class="ion-padding" *ngIf="selectedSegment === 'president'">
+<div *ngFor="let pre of President">
+    <ion-card color="warning">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">NPP</ion-card-subtitle>
+            <ion-card-title><ion-icon name="finger-print-sharp"></ion-icon>{{ pre.npp }}</ion-card-title>
+            
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar><img src="assets/npp.png"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="primary">
+      <div class="mask">
+        <img   src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">NDC</ion-card-subtitle>
+            <ion-card-title><ion-icon name="finger-print-sharp"></ion-icon>{{ pre.ndc }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar> <img  src="assets/ndc1.png"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="success">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">GUM</ion-card-subtitle>
+            <ion-card-title><ion-icon name="finger-print-sharp"></ion-icon>{{ pre.gum }}</ion-card-title>
+            
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar> <img  src="assets/gum.png"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="warning">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">CPP</ion-card-subtitle>
+            <ion-card-title><ion-icon name="finger-print-sharp"></ion-icon>{{ pre.cpp }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar ><img src="assets/CPP-Logo.png"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="primary">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">GFP</ion-card-subtitle>
+            <ion-card-title><ion-icon name="finger-print-sharp"></ion-icon>{{ pre.gfp }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar><img src="assets/GFP.jpeg"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="success">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">GCPP</ion-card-subtitle>
+            <ion-card-title><ion-icon name="finger-print-sharp"></ion-icon>{{ pre.gcpp }}</ion-card-title>
+            
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar > <img src="assets/GCPP.jpg"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="warning">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">APC</ion-card-subtitle>
+            <ion-card-title><ion-icon name="finger-print-sharp"></ion-icon>{{ pre.apc }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar ><img src="assets/APC.png"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="primary">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">LPG</ion-card-subtitle>
+            <ion-card-title><ion-icon name="finger-print-sharp"></ion-icon>{{ pre.lpg }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar><img src="assets/LPG.jpg"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="success">
+      <div class="mask">
+        <img  src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">PNC</ion-card-subtitle>
+            <ion-card-title><ion-icon name="finger-print-sharp"></ion-icon>{{ pre.pnc }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar ><img src="assets/PNC.jpg"> </ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="warning">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">PPP</ion-card-subtitle>
+            <ion-card-title><ion-icon name="finger-print-sharp"></ion-icon>{{ pre.ppp }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar><img src="assets/ppp.png"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="primary">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">NDP</ion-card-subtitle>
+            <ion-card-title><ion-icon name="finger-print-sharp"></ion-icon>{{ pre.ndp }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar ><img src="assets/NDP_Ghana_logo.png"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="success">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">INDEPENDENT</ion-card-subtitle>
+            <ion-card-title><ion-icon name="finger-print-sharp"></ion-icon>{{ pre.independent }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar  ><img src="assets/INP.jpg"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    <ion-card color="success">
+      <div class="mask">
+        <img  src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">SPOILT BALLOT</ion-card-subtitle>
+            <ion-card-title><ion-icon name="finger-print-sharp"></ion-icon>{{ pre.spoilt_ballot }}</ion-card-title>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  </div>
+
+  <div class="ion-padding" *ngIf="selectedSegment === 'parliamentary'">
+    <div *ngFor="let par of Parliament">
+    <ion-card color="warning">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">NPP</ion-card-subtitle>
+            <ion-card-title><ion-icon name="thumbs-up-sharp"></ion-icon>{{ par.npp }}</ion-card-title>
+            
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar><img src="assets/npp.png"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="primary">
+      <div class="mask">
+        <img   src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">NDC</ion-card-subtitle>
+            <ion-card-title><ion-icon name="thumbs-up-sharp"></ion-icon>{{ par.ndc }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar> <img  src="assets/ndc1.png"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="success">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">GUM</ion-card-subtitle>
+            <ion-card-title><ion-icon name="thumbs-up-sharp"></ion-icon>{{ par.gum }}</ion-card-title>
+            
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar> <img  src="assets/gum.png"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="warning">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">CPP</ion-card-subtitle>
+            <ion-card-title><ion-icon name="thumbs-up-sharp"></ion-icon>{{ par.cpp }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar ><img src="assets/CPP-Logo.png"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="primary">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">GFP</ion-card-subtitle>
+            <ion-card-title><ion-icon name="thumbs-up-sharp"></ion-icon>{{ par.gfp }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar><img src="assets/GFP.jpeg"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="success">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">GCPP</ion-card-subtitle>
+            <ion-card-title><ion-icon name="thumbs-up-sharp"></ion-icon>{{ par.gcpp }}</ion-card-title>
+            
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar > <img src="assets/GCPP.jpg"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="warning">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">APC</ion-card-subtitle>
+            <ion-card-title><ion-icon name="thumbs-up-sharp"></ion-icon>{{ par.apc }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar ><img src="assets/APC.png"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="primary">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">LPG</ion-card-subtitle>
+            <ion-card-title><ion-icon name="thumbs-up-sharp"></ion-icon>{{ par.lpg }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar><img src="assets/LPG.jpg"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="success">
+      <div class="mask">
+        <img  src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">PNC</ion-card-subtitle>
+            <ion-card-title><ion-icon name="thumbs-up-sharp"></ion-icon>{{ par.pnc }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar ><img src="assets/PNC.jpg"> </ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="warning">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">PPP</ion-card-subtitle>
+            <ion-card-title><ion-icon name="thumbs-up-sharp"></ion-icon>{{ par.ppp }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar><img src="assets/ppp.png"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="primary">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">NDP</ion-card-subtitle>
+            <ion-card-title><ion-icon name="thumbs-up-sharp"></ion-icon>{{ par.ndp }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar ><img src="assets/NDP_Ghana_logo.png"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="success">
+      <div class="mask">
+        <img src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">INDEPENDENT</ion-card-subtitle>
+            <ion-card-title><ion-icon name="thumbs-up-sharp"></ion-icon>{{ par.independent }}</ion-card-title>
+          </ion-col>
+          <ion-col size="4">
+            <ion-avatar  ><img src="assets/INP.jpg"></ion-avatar>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    <ion-card color="success">
+      <div class="mask">
+        <img  src="assets/pokeball.png">
+      </div>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">SPOILT BALLOT</ion-card-subtitle>
+            <ion-card-title><ion-icon name="thumbs-down-sharp"></ion-icon>{{ par.spoilt_ballot }}</ion-card-title>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  </div>
+</ion-content>

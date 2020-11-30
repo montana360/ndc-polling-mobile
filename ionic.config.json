@@ -1,0 +1,7 @@
+{
+  "name": "ndcpolling",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

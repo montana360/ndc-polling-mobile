@@ -1,0 +1,38 @@
+
+
+<ion-content class="ion-padding back">
+  <div class="title ">
+  <h4>LOGIN</h4>
+</div> 
+  <form [formGroup]="loginForm">
+    <ion-list lines="none"> 
+      <ion-item>
+        <ion-input placeholder="email" formControlName="email" type="email" class="primary-input"></ion-input><br>
+        <p style="color: red;" *ngIf="loginForm.get('email').touched && loginForm.get('email').hasError('required')">
+          Required Field
+        </p>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Password" formControlName="password" type="password" class="primary-input"></ion-input><br>
+        <p style="color: red;" *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('required')">
+          Required Field
+        </p>
+      </ion-item>
+    </ion-list>
+    <!-- <div class="ion-margin-top ion-text-right forget">
+      <a>Forgot Password?</a>
+    </div> -->
+
+    <div class="ion-margin-top">
+      <ion-button expand="block" class="but"  (click)="signIn();dismiss()">
+        <span *ngIf="this.isLoading" class="spinner-border spinner-border-sm" role="status"></span>
+            <span *ngIf="this.isLoading" class="load-text"> Loading...</span>
+            <span *ngIf="!this.isLoading" class="btn-text">Signin</span>
+      </ion-button>
+    </div>
+ </form>
+ <div class="ion-margin-top ion-text-center">
+  <a (click)="dismiss()">Close</a>
+</div>
+</ion-content>
